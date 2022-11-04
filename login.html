@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="data:image/png;base64,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" alt="Avatar" class="avatar">
+</div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+</body>
+</html>
